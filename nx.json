@@ -1,5 +1,9 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "workspaceLayout": {
+    "appsDir": "apps",
+    "libsDir": "libs"
+  },
   "targetDefaults": {
     "build": {
       "cache": true,
@@ -30,6 +34,19 @@
       "default"
     ],
     "sharedGlobals": []
+  },
+  "generators": {
+    "@nx/react": {
+      "application": {
+        "bundler": "vite",
+        "compiler": "swc",
+        "e2eTestRunner": "playwright",
+        "unitTestRunner": "vitest",
+        "style": "@emotion/styled",
+        "routing": true,
+        "tags": "app:react,kind:shell"
+      }
+    }
   },
   "nxCloudAccessToken": "NjEzOWQyYzQtZDc3MS00MzMyLWI3ZTQtMDQwYWE3YTRjODkyfHJlYWQtd3JpdGU="
 }
